@@ -55,6 +55,10 @@
 #define BLEMIDI_ENABLE_CONSOLE 1
 #endif
 
+#define BLEMIDI_STATUS_INITIALIZED 0
+#define BLEMIDI_STATUS_CONNECTED 1
+#define BLEMIDI_STATUS_DISCONNECTED 2
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -66,7 +70,7 @@ extern "C" {
  *         API see blemidi_receive_packet_callback_for_debugging
  *         Specify NULL if no callback required in your application.
  */  
-extern int32_t blemidi_init(void *callback_midi_message_received);
+extern int32_t blemidi_init(void *callback_midi_message_received, void *callback_status);
 
 /**
  * @brief Sends a BLE MIDI message
